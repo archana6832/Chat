@@ -1,34 +1,32 @@
 import React from 'react';
-import {
-    View,
-    Text,
-    StyleSheet,
-    ImageBackground,
-    Pressable,
-} from 'react-native';
+import { View, Text, StyleSheet, ImageBackground, Pressable, } from 'react-native';
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
 import backgroundImg from '../assets/image/bgimage.png';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class Start extends React.Component {
-    state = {
-        name: '',
-        bgColor: '#ffffff',
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: '',
+            bgColor: '#ffffff',
+        };
+    }
 
     /*
-   Updates the state with the background color choice of a user
+   Updates the state with the background color choice of a user 
    from the colors list
    */
     changeBgColor = newColor => {
         this.setState({ bgColor: newColor });
     };
-    //background color options
+
+    //background color choices
     colors = {
-        pink: '#f9d5e5',
-        purple: '#baa6d0',
-        green: '#c4df9b',
-        blue: '#7accc8',
+        black: "#090C08",
+        independence: "#474056",
+        duskGray: "#8A95A5",
+        composedGreen: "#B9C6AE",
     };
 
     render() {
@@ -61,48 +59,48 @@ export default class Start extends React.Component {
                             <Text style={styles.colorsTitle}>Choose a Background Color</Text>
 
                             <View style={styles.colorsList}>
-                                {/* pink background */}
+                                {/* Black background */}
                                 <TouchableOpacity
                                     accessible={true}
-                                    accessibilityLabel="Select pink background"
-                                    accessibilityHint="Choose pink background for the chat screen"
+                                    accessibilityLabel="Select black background"
+                                    accessibilityHint="Choose black background for the chat screen"
                                     accessibilityRole="button"
-                                    onPress={() => this.changeBgColor(this.colors.pink)}
+                                    onPress={() => this.changeBgColor(this.colors.black)}
                                 >
-                                    <View style={styles.pink}></View>
+                                    <View style={styles.black}></View>
                                 </TouchableOpacity>
 
-                                {/* Purple background */}
+                                {/* Independence background */}
                                 <TouchableOpacity
                                     accessible={true}
-                                    accessibilityLabel="Select purple background"
-                                    accessibilityHint="Choose purple background for the chat screen"
+                                    accessibilityLabel="Select independence background"
+                                    accessibilityHint="Choose independence background for the chat screen"
                                     accessibilityRole="button"
-                                    onPress={() => this.changeBgColor(this.colors.purple)}
+                                    onPress={() => this.changeBgColor(this.colors.independence)}
                                 >
-                                    <View style={styles.purple}></View>
+                                    <View style={styles.independence}></View>
                                 </TouchableOpacity>
 
-                                {/* GREEN background */}
+                                {/* DuskGray background */}
                                 <TouchableOpacity
                                     accessible={true}
-                                    accessibilityLabel="Select green background"
-                                    accessibilityHint="Choose green background for the chat screen"
+                                    accessibilityLabel="Select duskGray background"
+                                    accessibilityHint="Choose duskGray background for the chat screen"
                                     accessibilityRole="button"
-                                    onPress={() => this.changeBgColor(this.colors.green)}
+                                    onPress={() => this.changeBgColor(this.colors.duskGray)}
                                 >
-                                    <View style={styles.green}></View>
+                                    <View style={styles.duskGray}></View>
                                 </TouchableOpacity>
 
-                                {/* BLUE background */}
+                                {/* ComposedGreen background */}
                                 <TouchableOpacity
                                     accessible={true}
-                                    accessibilityLabel="Select blue background"
-                                    accessibilityHint="Choose blue background for the chat screen"
+                                    accessibilityLabel="Select composedGreen background"
+                                    accessibilityHint="Choose composedGreen background for the chat screen"
                                     accessibilityRole="button"
-                                    onPress={() => this.changeBgColor(this.colors.blue)}
+                                    onPress={() => this.changeBgColor(this.colors.composedGreen)}
                                 >
-                                    <View style={styles.blue}></View>
+                                    <View style={styles.composedGreen}></View>
                                 </TouchableOpacity>
                             </View>
                         </View>
@@ -185,6 +183,8 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     icon: {
+        //marginLeft: 15,
+        //marginRight: 15,
         marginRight: 15,
         height: 25,
         width: 25,
@@ -203,8 +203,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 18,
         fontWeight: '300',
-        /*color: '#736357',*/
-        color: '#757083',
+        color: '#736357',
         opacity: 1,
         marginBottom: 10,
     },
@@ -213,31 +212,29 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
     },
-    pink: {
+    black: {
         width: 40,
         height: 40,
         borderRadius: 20,
-        backgroundColor: '#f9d5e5',
-
+        backgroundColor: '#090C08',
     },
-    purple: {
+    independence: {
         width: 40,
         height: 40,
         borderRadius: 20,
-        backgroundColor: '#baa6d0',
+        backgroundColor: '#474056',
     },
-    green: {
+    duskGray: {
         width: 40,
         height: 40,
         borderRadius: 20,
-        backgroundColor: '#c4df9b',
-
+        backgroundColor: '#8A95A5',
     },
-    blue: {
+    composedGreen: {
         width: 40,
         height: 40,
         borderRadius: 20,
-        backgroundColor: '#7accc8',
+        backgroundColor: '#B9C6AE',
     },
     button: {
         width: '88%',
