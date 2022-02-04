@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, TextInput, View, Button } from 'react-native';
-
+import React from 'react';
 // import react native gesture handler
 import 'react-native-gesture-handler';
 
 // import react Navigation
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+
 // import the screens
 import Chat from './components/Chat';
 import Start from './components/Start';
